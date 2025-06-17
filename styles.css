@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #010e28, #eeeff2);
+    color: white;
+    padding: 40px;
+  }
+  
+  .hero, .signup {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .hero h1, .signup h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    
+    background-color: #e45b20;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e67e22;
+  }
+  
+  .signup input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: none;
+    color: black;
+  }
+  #intro{
+    color: rgb(246, 220, 220);
+    font-size: xx-large;
+  }
+  #new{
+    background: linear-gradient(to right, #fd01c6, #7687b8);
+  }
+  #ready {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #010809;
+   
+  }
+  
+  #text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  #ques {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+  
+  #ques button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #f39c12;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #ques button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

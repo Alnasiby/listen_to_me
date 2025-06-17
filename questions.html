@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Time</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <img src="imageeee/sing2.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px; text-align: left;">
+  <img src="imageeee/sing3.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px; text-align: right;">
+
+  <h2 style="font-size: xx-large;"> Mood Quiz</h2>
+  <form id="quizForm">
+    <p>1️⃣ How do you feel right now?</p>
+    <select id="mood">
+      <option value="happy">Happy 😊</option>
+      <option value="sad">Sad 😢</option>
+      <option value="energetic">Energetic 🔥</option>
+      <option value="calm">Calm 🌙</option>
+    </select>
+
+    <p>2️⃣ What kind of music do you like?</p>
+    <select id="genre">
+      <option value="bollywood">Bollywood 🎬</option>
+      <option value="pop">Pop 🎤</option>
+      <option value="rock">Rock 🎸</option>
+      <option value="classical">Classical 🎻</option>
+      <option value="romantic">Romantic 💖</option>
+    </select>
+
+    <p>3️⃣ Do you prefer lyrics or just beats?</p>
+    <select id="style">
+      <option value="lyrics">Lyrics 🎶</option>
+      <option value="beats">Beats 🥁</option>
+    </select>
+
+    <br><br>
+    <button type="submit">🎵 Get My Song</button>
+  </form>
+</body>
+
+<script>
+  document.getElementById("quizForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const mood = document.getElementById("mood").value;
+    const genre = document.getElementById("genre").value;
+    const style = document.getElementById("style").value;
+
+    // Save the answers
+    localStorage.setItem("mood", mood);
+    localStorage.setItem("genre", genre);
+    localStorage.setItem("style", style);
+
+    // Navigate to result page
+    window.location.href = "result.html";
+  });
+</script>
+</html>

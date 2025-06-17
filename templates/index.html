@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listen to Me</title>
+</head>
+<body>
+  <h1>🎵 Listen to Me 🎧</h1>
+  <p>Tell me your mood or interest:</p>
+  <input type="text" id="userInput" placeholder="I'm feeling sad...">
+  <button onclick="sendMessage()">Get Song Recommendation</button>
+  <p id="response"></p>
+
+  <script>
+    async function sendMessage() {
+      const userInput = document.getElementById("userInput").value;
+      const response = await fetch('/recommend', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ message: userInput })
+      });
+      const data = await response.json();
+      document.getElementById("response").innerText = data.reply || data.error;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎶 Your Song Recommendation</title>
+</head>
+<body>
+  <h1>Based on your mood... 🥁</h1>
+  <p id="response">Getting your song recommendation...</p>
+
+  <script>
+    window.onload = async function() {
+      document.body.innerHTML = `<h2>Based on your mood... 🥁</h2>
+                                 <p>Getting your song recommendation...</p>`;
+  
+      const mood = localStorage.getItem("mood");
+      const genre = localStorage.getItem("genre");
+      const style = localStorage.getItem("style");
+  
+      try {
+        const response = await fetch("http://127.0.0.1:5000/api/recommend", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ mood, genre, style })
+        });
+  
+        const data = await response.json();
+        if (data.reply) {
+          document.body.innerHTML += `<h3>🎵 AI Recommends: ${data.reply}</h3>`;
+        } else {
+          document.body.innerHTML += `<p>😢 AI couldn't generate a song. Error: ${data.error}</p>`;
+        }
+      } catch (err) {
+        document.body.innerHTML += `<p>❌ Error connecting to AI: ${err}</p>`;
+      }
+    };
+  </script>
+  
+  
+</body>
+</html>
