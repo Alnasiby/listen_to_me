@@ -5,8 +5,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <img src="imageeee/sing2.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px; text-align: left;">
-  <img src="imageeee/sing3.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px; text-align: right;">
+  <img src="imageeee/sing2.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px;">
+  <img src="imageeee/sing3.jpg" alt="Music Blast" style="width: 300px; border-radius: 20px; float: right;">
 
   <h2 style="font-size: xx-large;"> Mood Quiz</h2>
   <form id="quizForm">
@@ -14,8 +14,14 @@
     <select id="mood">
       <option value="happy">Happy 😊</option>
       <option value="sad">Sad 😢</option>
+      <option value="romantic">Romantic 💖</option>
       <option value="energetic">Energetic 🔥</option>
       <option value="calm">Calm 🌙</option>
+      <option value="devotional">Devotional 🙏</option>
+      <option value="heartbroken">Heartbroken 💔</option>
+      <option value="motivated">Motivated 💪</option>
+      <option value="love">Love 💕</option>
+      <option value="nostalgic">Nostalgic 📻</option>
     </select>
 
     <p>2️⃣ What kind of music do you like?</p>
@@ -25,34 +31,43 @@
       <option value="rock">Rock 🎸</option>
       <option value="classical">Classical 🎻</option>
       <option value="romantic">Romantic 💖</option>
+      <option value="punjabi">Punjabi 🕺</option>
+      <option value="tamil">Tamil 🎼</option>
+      <option value="malayalam">Malayalam 🌴</option>
+      <option value="hindi">Hindi 🗣️</option>
     </select>
 
     <p>3️⃣ Do you prefer lyrics or just beats?</p>
     <select id="style">
-      <option value="lyrics">Lyrics 🎶</option>
-      <option value="beats">Beats 🥁</option>
+      <option value="dance">Dance 💃</option>
+      <option value="slow">Slow 🎵</option>
+      <option value="melody">Melody 🎶</option>
+      <option value="party">Party 🥳</option>
+      <option value="instrumental">Instrumental 🎼</option>
+      <option value="bhajan">Bhajan 🙏</option>
+      <option value="emotional">Emotional 😭</option>
+      <option value="inspirational">Inspirational 🚀</option>
+      <option value="classic">Classic 🎧</option>
     </select>
 
     <br><br>
     <button type="submit">🎵 Get My Song</button>
   </form>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const mood = document.getElementById("mood").value;
+      const genre = document.getElementById("genre").value;
+      const style = document.getElementById("style").value;
+
+      localStorage.setItem("mood", mood);
+      localStorage.setItem("genre", genre);
+      localStorage.setItem("style", style);
+
+      window.location.href = "result.html";
+    });
+  </script>
 </body>
-
-<script>
-  document.getElementById("quizForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const mood = document.getElementById("mood").value;
-    const genre = document.getElementById("genre").value;
-    const style = document.getElementById("style").value;
-
-    // Save the answers
-    localStorage.setItem("mood", mood);
-    localStorage.setItem("genre", genre);
-    localStorage.setItem("style", style);
-
-    // Navigate to result page
-    window.location.href = "result.html";
-  });
-</script>
 </html>
